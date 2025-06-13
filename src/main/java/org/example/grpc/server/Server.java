@@ -14,7 +14,7 @@ public class Server extends StudentServiceGrpc.StudentServiceImplBase{
 
     Logger logger = LoggerFactory.getLogger(Server.class);
     StudentResponse response = StudentResponse.newBuilder()
-            .setAge(10).setName("Mahmood")
+            .setAge(10).setName("sara")
             .build();
     @Override
     public void getStudent(StudentRequest request, StreamObserver<StudentResponse> responseObserver) {
