@@ -1,0 +1,22 @@
+// Protocol Buffers (protobuf) definition written in the proto3 syntax
+syntax = "proto3";
+//This option indicates that each message type defined in this file should be generated into its own Java file when compiled.
+option java_multiple_files = true;
+option java_package = "org.example.grpc";
+//This defines a gRPC service
+service StudentService {
+  //Each rpc method defines a remote procedure that can be called by clients
+  rpc GetStudent(StudentRequest) returns (StudentResponse) {};//unary RPC call.
+  rpc GetStudentStream(StudentRequest) returns (stream StudentResponse) {};//send multiple responses over a single call.
+  rpc SendStudentStream(stream StudentRequest) returns (StudentResponse) {};//This method accepts a stream of StudentRequest messages and returns a single StudentResponse.This is a server-side streaming RPC.
+  rpc SendAndGetStudentStream(stream StudentRequest) returns (stream StudentResponse) {}//his method accepts a stream of StudentRequest messages and returns a stream of StudentResponse messages. This is a bidirectional streaming RPC.
+}
+
+message StudentRequest {
+  int32 id = 3;
+}
+
+message StudentResponse {
+  string name = 1;
+  int32 age = 2;
+}
