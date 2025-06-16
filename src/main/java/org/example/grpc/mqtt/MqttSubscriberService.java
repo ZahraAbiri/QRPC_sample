@@ -4,21 +4,13 @@ import org.eclipse.paho.client.mqttv3.IMqttMessageListener;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class MqttSubscriberService {
-    //    private static final Logger logger = LoggerFactory.getLogger(MqttSubscriberService.class);
-    private final MqttClient mqttClient;
-
-    /**
-     * Constructor for MqttSubscriberService.
-     *
-     * @param mqttClient The MqttClient instance to use for subscribing.
-     */
-    public MqttSubscriberService(MqttClient mqttClient) {
-        this.mqttClient = mqttClient;
-    }
+    @Autowired
+    MqttClient mqttClient;
 
     /**
      * Subscribes to a given MQTT topic.

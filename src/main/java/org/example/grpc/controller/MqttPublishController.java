@@ -17,13 +17,6 @@ public class MqttPublishController {
      MqttPublisherService mqttPublisherService;
 
     /**
-     * Constructor for MqttPublishController.
-     *
-     * @param mqttPublisherService The MQTT publisher service to inject.
-     */
-
-
-    /**
      * Handles POST requests to /api/mqtt/publish.
      * Publishes a message to a specified MQTT topic.
      * <p>
