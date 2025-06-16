@@ -18,7 +18,7 @@ public class GreeterServiceImpl extends GreeterServiceGrpc.GreeterServiceImplBas
         HelloReply reply = HelloReply.newBuilder()
                 .setMessage(message)
                 .build();
-
+        System.err.println(reply);
         // Send the response back to the client
         responseObserver.onNext(reply);
         // Mark the RPC as completed
