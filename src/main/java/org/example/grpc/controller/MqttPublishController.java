@@ -49,4 +49,12 @@ public class MqttPublishController {
             return ResponseEntity.status(400).body("Invalid request payload: " + e.getMessage());
         }
     }
+    /*
+    *  درخواست‌های HTTP POST را برای انتشار پیام‌ها به یک کارگزار MQTT مدیریت می‌کند.
+    * اگرچه خود این متد MQTT نیست، اما با یک سرویس MQTT برای ارسال پیام‌ها تعامل دارد
+    * اگر می‌خواهید مستقیماً با یک کارگزار MQTT تعامل داشته باشید،
+    *  معمولاً از یک کتابخانه کلاینت MQTT (مانند Paho، Eclipse Mosquitto و غیره)
+    * برای اتصال به کارگزار و انتشار/اشتراک در موضوعات استفاده می‌کنی
+    *
+    * */
 }
